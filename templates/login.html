@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #6a11cb, #2575fc, #ff4ecd);
+            background-size: 300% 300%;
+            animation: gradientShift 10s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        .glass-card {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.15);
+            padding: 60px 50px;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 380px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            color: white;
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        .logo {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .welcome {
+            text-align: center;
+            font-size: 22px;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-group i {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .form-control {
+            width: 92%;
+            padding: 14px 14px 14px 42px;
+            border-radius: 16px;
+            border: none;
+            outline: none;
+            transition: 0.3s;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .form-control:focus {
+            box-shadow: 0 0 15px #ffffff;
+            transform: scale(1.02);
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 14px;
+            background: linear-gradient(90deg, #ff4ecd, #6a11cb);
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-login:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .google-btn {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 14px;
+            background: white;
+            color: black;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .google-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .signup {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .signup a {
+            color: #fff;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        @media(max-width: 500px){
+            .glass-card{
+                margin: 20px;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="glass-card">
+
+    <div class="logo">🔷 SentimentAI</div>
+    <div class="welcome">Welcome Back</div>
+
+    <form method="POST">
+
+        <div class="input-group">
+            <i class="fa fa-envelope"></i>
+            <input type="text" name="username" placeholder="Email" class="form-control" required>
+        </div>
+
+        <div class="input-group">
+            <i class="fa fa-lock"></i>
+            <input type="password" name="password" placeholder="Password" class="form-control" required>
+        </div>
+
+        <div class="options">
+            <label><input type="checkbox"> Remember Me</label>
+            <a href="#" style="color:white;">Forgot Password?</a>
+        </div>
+
+        <button class="btn-login">Login</button>
+
+        <div class="google-btn">
+            <i class="fa-brands fa-google"></i> Continue with Google
+        </div>
+
+        {% if error %}
+        <div style="margin-top:15px; color: #ffcccc;">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        <div class="signup">
+            Don’t have an account? <a href="#">Sign Up</a>
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>
