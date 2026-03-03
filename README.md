@@ -1,3 +1,6 @@
+## 🌍 Live Demo
+https://your-render-url.onrender.com
+
 # 📊 SentimentAI – Feedback Sentiment Dashboard
 
 SentimentAI is a Flask-based web application that analyzes textual feedback and classifies it as Positive, Negative, or Neutral using Natural Language Processing.
@@ -72,3 +75,4 @@ This project was built as a portfolio mini-project to demonstrate:
     ->Authentication and session management
 
 | Future improvements may include multi-user roles, faculty-wise analysis, trend tracking, and deployment to cloud platforms. |
+
